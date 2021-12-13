@@ -2,6 +2,9 @@ import axios from "axios";
 import { urlUtils } from "../utils/urlUtils";
 
 export class Auth {
+    static token?: string;
+    static refreshToken?: string;
+
     static login(email: string, password: string, postLoginAction: () => void, errorAction: (message: string) => void) {
         axios.defaults.headers.common["Authorization"] = "";
 
